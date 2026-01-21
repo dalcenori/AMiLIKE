@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AMiLIKE® — Birth Number Report</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1>AMiLIKE®</h1>
+          <p class="sub">Better than a Greeting Card. More thoughtful than a Trinket.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Instant Birth Number Report</h2>
+      <p class="muted">Enter a name and birthdate. You’ll get a quick, shareable AMiLIKE-style readout.</p>
+
+      <form id="form" class="form">
+        <div class="row">
+          <label>
+            <span>Name</span>
+            <input id="name" name="name" type="text" placeholder="e.g., Rob" autocomplete="name" required />
+          </label>
+
+          <label>
+            <span>Birthdate</span>
+            <input id="dob" name="dob" type="date" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Generate</button>
+          <button type="button" id="randomize" class="btn secondary">Try Example</button>
+          <button type="button" id="copyLink" class="btn ghost" disabled>Copy Share Link</button>
+        </div>
+
+        <p class="tiny muted">
+          Note: This demo calculates <strong>Birth Number</strong> from the <strong>day of month</strong> (with 11 and 22 preserved).
+          You can replace the logic with your proprietary calculator later.
+        </p>
+      </form>
+    </section>
+
+    <section id="result" class="card hidden" aria-live="polite">
+      <div class="resultTop">
+        <div>
+          <h2 id="r_title">Your AMiLIKE® Snapshot</h2>
+          <p class="muted" id="r_meta"></p>
+        </div>
+        <div class="pill" id="r_number">—</div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <h3>Core Vibe</h3>
+          <p id="r_vibe"></p>
+        </div>
+
+        <div class="panel">
+          <h3>Strengths</h3>
+          <ul id="r_strengths"></ul>
+        </div>
+
+        <div class="panel">
+          <h3>Watch-Outs</h3>
+          <ul id="r_watchouts"></ul>
+        </div>
+
+        <div class="panel wide">
+          <h3>AMiLIKE Line</h3>
+          <blockquote id="r_line"></blockquote>
+          <div class="miniActions">
+            <button type="button" id="copyLine" class="btn small">Copy Line</button>
+            <button type="button" id="downloadTxt" class="btn small secondary">Download .txt</button>
+          </div>
+        </div>
+      </div>
+
+      <details class="details">
+        <summary>Optional: Print-friendly version</summary>
+        <div class="printBox" id="printBox"></div>
+        <div class="miniActions">
+          <button type="button" id="print" class="btn small ghost">Print</button>
+        </div>
+      </details>
+    </section>
+
+    <footer class="footer">
+      <p class="tiny muted">© <span id="year"></span> AMiLIKE® — Demo calculator for GitHub Pages.</p>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
